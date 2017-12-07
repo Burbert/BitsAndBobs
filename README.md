@@ -1,3 +1,3 @@
 # Introduction
 
-Sharing some handy Powershell snippts here :-)
+Sharing some handy Powershell snippets here :-)
