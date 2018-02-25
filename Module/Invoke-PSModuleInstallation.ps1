@@ -1,9 +1,9 @@
-Function Install-CBModule{
+Function Invoke-PSModuleInstallation{
     <#
         .SYNOPSIS
-            Install or Update Powershell Module from PS Gallery
+            Installs or Updates a Powershell Module from PS Gallery
         .DESCRIPTION
-            Install or Update a Powershell Module from PS Gallery.
+            Installs or Updates a Powershell Module from PS Gallery.
             If there are multiple versions of the same module installed, this will remove all versions before it installs the desired one (use -Force).
 
             Requirements
@@ -11,7 +11,7 @@ Function Install-CBModule{
                 RunAs Administrator
 
             by Christoph Burmeister - Twitter: @_Burbert - Github: Burbert
-            Version: 1.0 - 29-01-2018
+            Version: 1.1 - 02-25-2018
         .Parameter Name
             Name of the Powershell Module in PS Gallery.
         .Parameter Version
@@ -23,9 +23,9 @@ Function Install-CBModule{
         .Parameter Force
             Use the Force-Parameter to remove multiple installed versions in order to install the desired one (only one will be left).
         .EXAMPLE
-            Install-CBModule -Name AzureRM -Version "Newest" -InstalledModules $InstalledModules -Scope AllUsers -Force -Verbose
+            Invoke-PSModuleInstallation -Name AzureRM -Version "Newest" -InstalledModules $InstalledModules -Scope AllUsers -Force -Verbose
         .EXAMPLE
-            Install-CBModule -Name vCloudDirector -Version "0.0.2" -InstalledModules (Get-Module -ListAvailable) -Force -Verbose
+            Invoke-PSModuleInstallation -Name vCloudDirector -Version "0.0.2" -InstalledModules (Get-Module -ListAvailable) -Force -Verbose
     #>
     #Requires -Version 5
     #Requires -RunAsAdministrator
