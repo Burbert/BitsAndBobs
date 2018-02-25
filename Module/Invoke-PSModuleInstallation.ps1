@@ -85,7 +85,7 @@ Function Invoke-PSModuleInstallation{
             }
         }else{
             Write-Verbose "Only one Version of Module $Name is installed"
-            Write-Verbose "Current Version: ($CurrentModuleInstalled.Version)"
+            Write-Verbose "Current Version: $($CurrentModuleInstalled.Version)"
             # find latest version in Gallery
             try{
                 $LatestVersion = Find-Module -Name $Name -ErrorAction Stop -Verbose:$False
